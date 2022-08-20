@@ -1,22 +1,22 @@
 const path = require('path');
-	const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
- module.exports = {
-   mode: 'development',
-   entry: {
-     index: './src/index.js',
-     print: './src/print.js',
-   },
-   devtool: 'inline-source-map',
-   devServer: {
+module.exports = {
+  mode: 'development',
+  entry: {
+    index: './src/index.js',
+    print: './src/print.js',
+  },
+  devtool: 'inline-source-map',
+  devServer: {
     static: './dist',
   },
   output: {
-     filename: '[name].bundle.js',
-     path: path.resolve(__dirname, 'dist'),
-     clean: true,
-   },
-   module: {
+    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, 'dist'),
+    clean: true,
+  },
+  module: {
     rules: [
       {
         test: /\.css$/i,
@@ -24,7 +24,7 @@ const path = require('path');
       },
     ],
   },
-   plugins: [
+  plugins: [
     new HtmlWebpackPlugin({
       title: 'Output Management',
       template: './src/index.html',
@@ -32,8 +32,5 @@ const path = require('path');
   ],
   optimization: {
     runtimeChunk: 'single',
-  },  
- };
- 
-
-
+  },
+};

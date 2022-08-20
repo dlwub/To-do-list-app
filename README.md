@@ -2,7 +2,7 @@
 
 # To do list app
 
-> This project is a simple website to add, remove, display, mark as complete, and reorder list of tasks. 
+> In this project, all the CRUD (create, read, update, delete) methods have been implemented. All the elements of the user interface are fully functional and the application is completed. 
 
 ## Built With
 
