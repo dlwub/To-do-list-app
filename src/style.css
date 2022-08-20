@@ -15,6 +15,7 @@ body {
 .item-row {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 1.25rem;
   border-bottom: 2px solid #f5f5f5;
   font-size: 1.25rem;
@@ -24,8 +25,47 @@ body {
   color: #ababab;
 }
 
+#list-input {
+  border: none;
+  width: 80%;
+  padding: 0.75rem;
+  font-size: 1.25rem;
+}
+
+#list-input::placeholder {
+  font-style: italic;
+  font-size: larger;
+}
+
+.list-item {
+  width: 80%;
+}
+
+.trash,
+.pencil {
+  display: none;
+  color: #ff7f50;
+}
+
+.active {
+  display: block;
+}
+
 .icons {
   color: #dcdcdc;
+}
+
+.ellip-container {
+  cursor: all-scroll;
+}
+
+label:focus,
+input:focus {
+  outline: none;
+}
+
+.line-through {
+  text-decoration: line-through;
 }
 
 #clear-btn {
@@ -36,13 +76,4 @@ body {
   padding: 1.25rem;
   width: 100%;
   font-size: 1.25rem;
-}
-
-#list-input {
-  border: none;
-}
-
-#list-input::placeholder {
-  font-style: italic;
-  font-size: larger;
 }
