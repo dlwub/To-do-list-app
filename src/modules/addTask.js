@@ -6,7 +6,7 @@ const addTask = (description) => {
   // Check for empty book and add book to booksArray
   if (description) {
     let taskArray = getLocalStorage();
-    const task = new Task(description, false, taskArray.length);
+    const task = new Task(description, false, taskArray.length + 1);
     taskArray = [...taskArray, task];
     setLocalStorage(taskArray);
   }
