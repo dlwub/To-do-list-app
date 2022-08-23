@@ -7,9 +7,9 @@ const editTask = (id) => {
   editable.addEventListener('mouseleave', (e) => {
     e.preventDefault();
     const taskArray = getLocalStorage();
-    taskArray[id-1].description = editable.textContent;
+    taskArray[id - 1].description = editable.textContent;
     setLocalStorage(taskArray);
-    });
+  });
 };
 
 export default editTask;
