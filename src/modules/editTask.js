@@ -4,13 +4,11 @@ import setLocalStorage from './setStorage.js';
 const editTask = (id) => {
   const editable = document.getElementById(`label-${id}`);
   editable.contentEditable = 'true';
-  editable.addEventListener('keyup', (e) => {
+  editable.addEventListener('mouseleave', (e) => {
     e.preventDefault();
-    if (e.key === 'Enter') {
-      const taskArray = getLocalStorage();
-      taskArray[id].description = editable.textContent;
-      setLocalStorage(taskArray);
-    }
+    const taskArray = getLocalStorage();
+    taskArray[id - 1].description = editable.textContent;
+    setLocalStorage(taskArray);
   });
 };
 
