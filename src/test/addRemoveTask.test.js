@@ -1,5 +1,6 @@
 import addTask from '../modules/addTask.js';
 import getLocalStorage from '../modules/getStorage.js';
+import deleteTask from '../modules/removeTask.js';
 import 'jest-localstorage-mock';
 
 describe('addTask and Delete', () => {
@@ -7,5 +8,10 @@ describe('addTask and Delete', () => {
     addTask('Test task');
     const taskArray = getLocalStorage();
     expect(taskArray.length).toBe(1);
+  });
+  test('should delete a task from the taskArray', () => {
+    deleteTask(1);
+    const taskArray = getLocalStorage();
+    expect(taskArray.length).toBe(0);
   });
 });
