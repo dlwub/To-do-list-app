@@ -3,6 +3,7 @@
 # To do list app
 
 > In this project, all the CRUD (create, read, update, delete) methods have been implemented. All the elements of the user interface are fully functional and the application is completed. 
+A unit test has been made using the Jest framework.
 
 ## Built With
 
