@@ -1,11 +1,10 @@
 import removeTask from './removeTask.js';
 import editTask from './editTask.js';
 import getLocalStorage from './getStorage.js';
-import setLocalStorage from './setStorage.js';
-
-const listHolder = document.getElementById('list-holder');
+import updateStatus from './updateStatus.js';
 
 const displayList = (taskArray) => {
+  const listHolder = document.getElementById('list-holder');
   listHolder.innerHTML = '';
   taskArray.forEach((item) => {
     listHolder.innerHTML += `
@@ -47,16 +46,14 @@ const displayList = (taskArray) => {
         } else if (e.target.classList.contains('pencil')) {
           editTask(id);
         } else if (eventType === 'change') {
-          const taskArray = getLocalStorage();
           const checkedLabel = document.getElementById(`label-${id}`);
+          // Update
           if (e.target.checked) {
             checkedLabel.classList.add('line-through');
-            taskArray[id].completed = true;
-            setLocalStorage(taskArray);
+            updateStatus(id, true);
           } else {
             checkedLabel.classList.remove('line-through');
-            taskArray[id].completed = false;
-            setLocalStorage(taskArray);
+            updateStatus(id, false);
           }
         }
       });
