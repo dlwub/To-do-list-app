@@ -31,4 +31,14 @@ describe('Edit task, update status, and clear completed', () => {
     const taskArray = getLocalStorage();
     expect(taskArray.length).toBe(1);
   });
+  test("Updates an item's completed status", () => {
+    setLocalStorage([]); // Clear the local storage
+    addTask('one');
+    addTask('two');
+    addTask('three');
+    updateStatus(2, true);
+    const taskArray = getLocalStorage();
+    const status = taskArray.map((task) => task.completed);
+    expect(status).toEqual([false, true, false]);
+  });
 });
